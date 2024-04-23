@@ -1,23 +1,470 @@
 // _variables.scss
 
 // Colors
-$primary-color: #007bff;
-$secondary-color: #6c757d;
-$success-color: #28a745;
-$danger-color: #dc3545;
-$warning-color: #ffc107;
-$info-color: #17a2b8;
+$primary-color: #4CAF50;
+$accent-color: #ff5722;
+$success-color-light: #5cb85c;
+$danger-color-light: #d9534f;
+$warning-color-light: #f0ad4e;
+$info-color-light: #5bc0de;
 
-// Fonts
-$base-font-family: Arial, sans-serif;
-$heading-font-family: 'Roboto', sans-serif;
+// Text Colors
+$text-color: #333;
+$text-color-light: #666;
+$text-color-dark: #222;
+$text-color-muted: #888;
 
-// Font Sizes
+// Background Colors
+$background-color: #f8f9fa;
+$background-color-dark: #e9ecef;
+
+// Border Colors
+$border-color: #ccc;
+$border-color-dark: #aaa;
+
+// Button Colors
+$button-color: $primary-color;
+$button-color-hover: darken($button-color, 10%);
+
+// Link Colors
+$link-color: #007bff;
+$link-color-hover: darken($link-color, 10%);
+
+// Header Sizes
+$heading1-size: 32px;
+$heading2-size: 28px;
+$heading3-size: 24px;
+$heading4-size: 20px;
+$heading5-size: 16px;
+$heading6-size: 14px;
+
+// Line Heights
+$line-height: 1.5;
+$line-height-heading: 1.2;
+
+// Border Sizes
+$border-width: 1px;
+$border-radius: 4px;
+
+// Shadow Colors
+$shadow-color: rgba(0, 0, 0, 0.1);
+$shadow-offset: 2px;
+$shadow-blur: 4px;
+
+// Opacity
+$opacity-light: 0.8;
+$opacity-medium: 0.6;
+$opacity-dark: 0.4;
+
+// Z-index
+$z-index-dropdown: 1000;
+$z-index-modal: 2000;
+$z-index-tooltip: 3000;
+
+// Animation Durations
+$animation-duration-short: 0.3s;
+$animation-duration-medium: 0.5s;
+$animation-duration-long: 1s;
+
+// Breakpoints
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Grid Settings
+$grid-gutter: 20px;
+$grid-columns: 12;
+
+// Form Settings
+$input-padding: 8px;
+$input-border-radius: 4px;
+$input-border-width: 1px;
+
+// Transition Durations
+$transition-duration-short: 0.3s;
+$transition-duration-medium: 0.5s;
+$transition-duration-long: 1s;
+
+// Text Shadows
+$text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+
+// Box Shadows
+$box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+// Outline Colors
+$outline-color: #007bff;
+$outline-width: 2px;
+$outline-offset: 2px;
+
+// Cursor Styles
+$cursor-pointer: pointer;
+$cursor-default: default;
+
+// Text Decoration
+$text-decoration-underline: underline;
+$text-decoration-none: none;
+
+// Overflow Styles
+$overflow-auto: auto;
+$overflow-hidden: hidden;
+$overflow-scroll: scroll;
+$overflow-visible: visible;
+
+// Flexbox Properties
+$flex-direction-row: row;
+$flex-direction-row-reverse: row-reverse;
+$flex-direction-column: column;
+$flex-direction-column-reverse: column-reverse;
+$flex-wrap: wrap;
+$flex-wrap-reverse: wrap-reverse;
+$flex-grow: 1;
+$flex-shrink: 1;
+$flex-basis: auto;
+$align-items-start: flex-start;
+$align-items-end: flex-end;
+$align-items-center: center;
+$align-items-baseline: baseline;
+$align-items-stretch: stretch;
+$justify-content-start: flex-start;
+$justify-content-end: flex-end;
+$justify-content-center: center;
+$justify-content-between: space-between;
+$justify-content-around: space-around;
+
+// Text Transform
+$text-transform-uppercase: uppercase;
+$text-transform-lowercase: lowercase;
+$text-transform-capitalize: capitalize;
+
+// Visibility
+$visibility-visible: visible;
+$visibility-hidden: hidden;
+
+// Positioning
+$position-static: static;
+$position-relative: relative;
+$position-absolute: absolute;
+$position-fixed: fixed;
+$position-sticky: sticky;
+
+// Display
+$display-block: block;
+$display-inline: inline;
+$display-inline-block: inline-block;
+$display-flex: flex;
+$display-inline-flex: inline-flex;
+
+// Overflow
+$overflow-x-auto: auto;
+$overflow-x-hidden: hidden;
+$overflow-x-scroll: scroll;
+$overflow-y-auto: auto;
+$overflow-y-hidden: hidden;
+$overflow-y-scroll: scroll;
+
+// Text Align
+$text-align-left: left;
+$text-align-right: right;
+$text-align-center: center;
+$text-align-justify: justify;
+
+// List Styles
+$list-style-type-none: none;
+$list-style-type-disc: disc;
+$list-style-type-circle: circle;
+$list-style-type-square: square;
+$list-style-position-inside: inside;
+$list-style-position-outside: outside;
+
+// Background Size
+$background-size-cover: cover;
+$background-size-contain: contain;
+
+// Background Position
+$background-position-center: center;
+$background-position-top: top;
+$background-position-right: right;
+$background-position-bottom: bottom;
+$background-position-left: left;
+
+// Background Repeat
+$background-repeat-repeat: repeat;
+$background-repeat-no-repeat: no-repeat;
+$background-repeat-repeat-x: repeat-x;
+$background-repeat-repeat-y: repeat-y;
+
+// Transition Timing Functions
+$transition-timing-function-ease: ease;
+$transition-timing-function-ease-in: ease-in;
+$transition-timing-function-ease-out: ease-out;
+$transition-timing-function-ease-in-out: ease-in-out;
+$transition-timing-function-linear: linear;
+
+// Box Sizing
+$box-sizing-content-box: content-box;
+$box-sizing-border-box: border-box;
+
+// Outline Styles
+$outline-style-none: none;
+$outline-style-dotted: dotted;
+$outline-style-dashed: dashed;
+$outline-style-solid: solid;
+$outline-style-double: double;
+$outline-style-groove: groove;
+$outline-style-ridge: ridge;
+$outline-style-inset: inset;
+$outline-style-outset: outset;
+
+// Border Styles
+$border-style-none: none;
+$border-style-hidden: hidden;
+$border-style-dotted: dotted;
+$border-style-dashed: dashed;
+$border-style-solid: solid;
+$border-style-double: double;
+$border-style-groove: groove;
+$border-style-ridge: ridge;
+$border-style-inset: inset;
+$border-style-outset: outset;
+
+// Border Radius
+$border-radius-none: 0;
+$border-radius-small: 4px;
+$border-radius-medium: 8px;
+$border-radius-large: 12px;
+$border-radius-full: 50%;
+
+// Text Overflow
+$text-overflow-ellipsis: ellipsis;
+
+// User Select
+$user-select-none: none;
+$user-select-text: text;
+$user-select-all: all;
+$user-select-auto: auto;
+
+// Transition Properties
+$transition-property-all: all;
+$transition-property-none: none;
+
+// Transition Durations
+$transition-duration-none: 0s;
+
+// Transition Timing Functions
+$transition-timing-function-none: none;
+
+// Transition Delays
+$transition-delay-none: 0s;
+
+// Transform Properties
+$transform-none: none;
+
+// Transform Functions
+$transform-translateX: translateX(0);
+$transform-translateY: translateY(0);
+$transform-translateZ: translateZ(0);
+$transform-scaleX: scaleX(1);
+$transform-scaleY: scaleY(1);
+$transform-scaleZ: scaleZ(1);
+$transform-rotate: rotate(0deg);
+$transform-skewX: skewX(0);
+$transform-skewY: skewY(0);
+$transform-perspective: perspective(0);
+$transform-origin: 50% 50%;
+
+// Typography
 $base-font-size: 16px;
-$heading-font-size: 24px;
+$base-line-height: 1.5;
+$heading1-font-size: 2.5rem;
+$heading2-font-size: 2rem;
+$heading3-font-size: 1.75rem;
+$heading4-font-size: 1.5rem;
+$heading5-font-size: 1.25rem;
+$heading6-font-size: 1rem;
 
 // Spacing
-$base-spacing: 16px;
-$small-spacing: 8px;
-$medium-spacing: 16px;
-$large-spacing: 32px;
+$space-xxs: 4px;
+$space-xs: 8px;
+$space-sm: 16px;
+$space-md: 24px;
+$space-lg: 32px;
+$space-xl: 40px;
+$space-xxl: 48px;
+
+// Shadows
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+$shadow-md: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+$shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+$shadow-xl: 0 15px 25px rgba(0, 0, 0, 0.22), 0 5px 10px rgba(0, 0, 0, 0.15);
+$shadow-xxl: 0 20px 40px rgba(0, 0, 0, 0.2);
+$shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.06), inset 0 3px 6px rgba(0, 0, 0, 0.12);
+
+// Borders
+$border-width-default: 1px;
+$border-width-lg: 2px;
+$border-width-sm: 0.5px;
+$border-radius-default: 4px;
+$border-radius-lg: 8px;
+$border-radius-sm: 2px;
+$border-color-default: #e0e0e0;
+$border-color-light: #f5f5f5;
+$border-color-dark: #bdbdbd;
+$border-color-primary: #4CAF50;
+$border-color-success: #4CAF50;
+$border-color-info: #2196F3;
+$border-color-warning: #FFC107;
+$border-color-danger: #F44336;
+
+// Font Sizes
+$font-size-default: 16px;
+$font-size-lg: 18px;
+$font-size-sm: 14px;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+$font-weight-black: 900;
+
+// Font Families
+$font-family-sans-serif: 'Roboto', sans-serif;
+$font-family-serif: 'Georgia', serif;
+$font-family-monospace: 'Courier', monospace;
+$font-family-system-ui: 'system-ui', sans-serif;
+$font-family-apple-system: 'Apple System', sans-serif;
+
+// Letter Spacing
+$letter-spacing-default: 0;
+$letter-spacing-wide: 1.2px;
+$letter-spacing-narrow: -1.2px;
+
+// Line Heights
+$line-height-default: 1.5;
+$line-height-lg: 2;
+$line-height-sm: 1.2;
+
+// Spacing
+$space-xxs: 4px;
+$space-xs: 8px;
+$space-sm: 16px;
+$space-md: 24px;
+$space-lg: 32px;
+$space-xl: 40px;
+$space-xxl: 48px;
+
+// Icons
+$icon-size-default: 24px;
+$icon-size-lg: 32px;
+$icon-size-sm: 16px;
+$icon-spacing-default: 8px;
+$icon-spacing-lg: 16px;
+$icon-spacing-sm: 4px;
+
+// Sizes
+$size-xs: 320px;
+$size-sm: 576px;
+$size-md: 768px;
+$size-lg: 992px;
+$size-xl: 1200px;
+$size-xxl: 1400px;
+$size-xxxl: 1600px;
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-xxl: 48px;
+$spacing-xxxl: 64px;
+$spacing-xxxxl: 96px;
+
+// Responsive Breakpoints
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Z-Index
+$zindex-default: 1;
+$zindex-fixed: 1000;
+$zindex-sticky: 1020;
+$zindex-modal-backdrop: 1040;
+$zindex-modal: 1050;
+$zindex-dropdown: 1060;
+$zindex-tooltip: 1070;
+
+// Gradient Colors
+$gradient-color-1: #ff7e5f;
+$gradient-color-2: #feb47b;
+$gradient-color-3: #fde47f;
+$gradient-color-4: #74ebd5;
+$gradient-color-5: #AC32E4;
+
+// Animation Keyframes
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slide-in {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+// Box Sizes
+$box-size-small: 20px;
+$box-size-medium: 40px;
+$box-size-large: 60px;
+
+// Flexbox Alignment
+$align-self-start: flex-start;
+$align-self-end: flex-end;
+$align-self-center: center;
+$align-self-baseline: baseline;
+$align-self-stretch: stretch;
+
+// Flexbox Order
+$order-first: -1;
+$order-last: 1;
+$order-default: 0;
+
+// Grid Template Areas
+$grid-area-header: 'header';
+$grid-area-sidebar: 'sidebar';
+$grid-area-main: 'main';
+$grid-area-footer: 'footer';
+
+// Grid Template Columns
+$grid-column-1fr: repeat(1, 1fr);
+$grid-column-2fr: repeat(2, 1fr);
+$grid-column-3fr: repeat(3, 1fr);
+$grid-column-4fr: repeat(4, 1fr);
+$grid-column-5fr: repeat(5, 1fr);
+
+// Grid Template Rows
+$grid-row-auto: auto;
+$grid-row-span: span;
+
+// Cursor Styles
+$cursor-crosshair: crosshair;
+$cursor-help: help;
+$cursor-text: text;
+
+// Text Decoration
+$text-decoration-line-through: line-through;
+$text-decoration-overline: overline;
+
+// Overflow Styles
+$overflow-x-auto: auto;
+$overflow-x-hidden: hidden;
+$overflow-x-scroll: scroll;
+$overflow-y-auto: auto;
+$overflow-y-hidden: hidden;
+$overflow-y-scroll: scroll;
+
+/* Variables End */

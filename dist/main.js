@@ -10,7 +10,9 @@ fetch('./src/translations.json')
         translations[translation.input.toLowerCase()] = translation.output;
     });
 })
-    .catch(error => console.error('Error loading translations:', error));
+    .catch(error => {
+    console.error('Error loading translations:', error);
+});
 // Translate function
 function translate(input) {
     // Convert input text to lowercase for case-insensitive matching
@@ -34,13 +36,31 @@ document.addEventListener('DOMContentLoaded', () => {
         translateBtn.addEventListener('click', () => {
             // Get input text
             const input = inputText.value.trim();
-            // Translate input
-            const translation = translate(input);
-            // Update output text
-            outputText.value = translation;
+            if (!input) {
+                swal({
+                    title: "Error!",
+                    text: "Please enter some text to translate.",
+                    icon: "error",
+                });
+                return false;
+            }
+            else {
+                // Translate input
+                const translation = translate(input);
+                // Update output text
+                outputText.value = translation;
+            }
         });
     }
     else {
         console.error('One or more elements not found.');
     }
 });
+// Apply CSS styles to console output
+const consoleStyles = `
+    font-size: 20px;
+    font-weight: bold;
+    color: #FF5733; /* You can use any color you prefer */
+`;
+// Display information about the page
+console.log('%cWarning: Do not paste any codes here unless you understand them. Hackers may attack you by that way.', consoleStyles);

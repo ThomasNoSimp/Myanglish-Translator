@@ -16,5 +16,9 @@
     "@types/babel__traverse": "^7.20.5",
     "node-sass": "^9.0.0",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@types/sweetalert": "^2.0.4",
+    "sweetalert": "^2.1.2"
   }
 }

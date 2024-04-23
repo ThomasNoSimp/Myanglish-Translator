@@ -1,3 +1,6 @@
+// SweetAlert Variable Declaration
+declare var swal: any;
+
 // Define translation mappings
 let translations: { [key: string]: string } = {};
 
@@ -10,7 +13,9 @@ fetch('./src/translations.json')
             translations[translation.input.toLowerCase()] = translation.output;
         });
     })
-    .catch(error => console.error('Error loading translations:', error));
+    .catch(error => {
+        console.error('Error loading translations:', error);
+    });
 
 // Translate function
 function translate(input: string): string {
@@ -37,14 +42,32 @@ document.addEventListener('DOMContentLoaded', () => {
         translateBtn.addEventListener('click', () => {
             // Get input text
             const input = inputText.value.trim();
+            
+            if (!input) {
+                swal({
+                    title: "Error!",
+                    text: "Please enter some text to translate.",
+                    icon: "error",
+                });
+                return false;
+            }
+            else {
+                // Translate input
+                const translation = translate(input);
 
-            // Translate input
-            const translation = translate(input);
-
-            // Update output text
-            outputText.value = translation;
+                // Update output text
+                outputText.value = translation;
+            }
         });
     } else {
         console.error('One or more elements not found.');
     }
 });
+
+const consoleStyles = `
+    font-size: 20px;
+    font-weight: bold;
+    color: #FF5733;
+`;
+
+console.log('%cWarning: Do not paste any codes here unless you understand them. Hackers may attack you by that way.', consoleStyles);

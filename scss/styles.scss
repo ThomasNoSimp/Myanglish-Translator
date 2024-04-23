@@ -1,39 +1,47 @@
-// Import variables
-@import 'variables';
+@import "variables";
 
 .translator {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: $medium-spacing; // Use a variable for margin-top
+    margin-top: $space-md; // Updated variable for margin-top
 
     textarea {
-        width: 300px;
+        background-color: $background-color-dark; // Updated variable for background-color
+        width: calc(100% - 5%);
         height: 150px;
-        margin-bottom: $medium-spacing; // Use a variable for margin-bottom
-        font-size: $base-font-size; // Use a variable for font-size
-        font-family: $base-font-family; // Use a variable for font-family
-        border: 0.1px solid $secondary-color; // Use a variable for border color
-        border-radius:5px;
-        padding: $small-spacing; // Use a variable for padding
+        margin-bottom: $space-md; // Updated variable for margin-bottom
+        font-size: $base-font-size; // Updated variable for font-size
+        font-family: $font-family-sans-serif; // Updated variable for font-family
+        border: 0.1px solid $border-color-dark; // Updated variable for border color
+        border-radius: $border-radius-small; // Updated variable for border-radius
+        padding: $space-sm; // Updated variable for padding
+
+        &[readonly] {
+            background-color: $background-color-dark; // Updated variable for background-color
+            pointer-events: none;
+        }
     }
 
     button {
-        padding: $small-spacing $medium-spacing; // Use variables for padding
-        background-color: $primary-color; // Use a variable for background-color
-        color: white;
-        border: none;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        margin-bottom: $medium-spacing;
+        padding: $space-sm $space-md; // Updated variables for padding
+        background-color: $button-color; // Updated variable for background-color
+        color: $text-color-dark; // Updated variable for color
+        border: $border-style-none; // Updated variable for border
+        cursor: $cursor-pointer; // Updated variable for cursor
+        transition: background-color $transition-duration-short $transition-timing-function-ease; // Updated variables for transition
+        margin-bottom: $space-md; // Updated variable for margin-bottom
+        width:calc(100% - 3%);
 
         &:hover {
-            background-color: darken($primary-color, 10%); // Use Sass function to darken color
+            background-color: darken($button-color, 10%); // Use Sass function to darken color
         }
     }
 
     label {
-        font-weight: bold;
-        font-size:25px;
+        font-weight: $font-weight-bold; // Updated variable for font-weight
+        font-size: $heading2-font-size; // Updated variable for font-size
+        font-family: $font-family-system-ui; // Updated variable for font-family
+        margin-bottom: $space-md; // Updated variable for margin-bottom
     }
 }

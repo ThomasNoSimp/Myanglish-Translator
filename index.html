@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Translator</title>
+    <title>Myanglish Translator</title>
     <link rel="stylesheet" href="dist/styles.css">
 </head>
 <body>
     <div class="translator">
-        <label for="input-text">Myanglish</label>
+        <label for="input-text">Myanglish Translator</label>
         <textarea id="input-text" placeholder="Enter text..."></textarea>
         <button id="translate-btn">Translate</button>
-        <textarea id="output-text" readonly></textarea>
+        <textarea id="output-text" readonly aria-readonly="true" placeholder="Translated text..."></textarea>
     </div>
 
-    <script src="dist/main.js"></script>
+    <!-- Main Script -->
+    <script type="module" src="dist/main.js"></script>
+
+    <!-- SweetAlert CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert@2/dist/sweetalert.min.js"></script>
 </body>
 </html>
