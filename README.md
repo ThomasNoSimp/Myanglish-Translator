@@ -1,1 +1,1 @@
-Don't raed me.
+Don't read me.
