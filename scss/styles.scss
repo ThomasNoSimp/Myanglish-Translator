@@ -1,0 +1,39 @@
+// Import variables
+@import 'variables';
+
+.translator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: $medium-spacing; // Use a variable for margin-top
+
+    textarea {
+        width: 300px;
+        height: 150px;
+        margin-bottom: $medium-spacing; // Use a variable for margin-bottom
+        font-size: $base-font-size; // Use a variable for font-size
+        font-family: $base-font-family; // Use a variable for font-family
+        border: 0.1px solid $secondary-color; // Use a variable for border color
+        border-radius:5px;
+        padding: $small-spacing; // Use a variable for padding
+    }
+
+    button {
+        padding: $small-spacing $medium-spacing; // Use variables for padding
+        background-color: $primary-color; // Use a variable for background-color
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-bottom: $medium-spacing;
+
+        &:hover {
+            background-color: darken($primary-color, 10%); // Use Sass function to darken color
+        }
+    }
+
+    label {
+        font-weight: bold;
+        font-size:25px;
+    }
+}
