@@ -1,4 +1,3 @@
-"use strict";
 // Define translation mappings
 let translations = {};
 // Fetch translations from JSON file
@@ -79,3 +78,15 @@ const consoleStyles = `
     color: #FF5733;
 `;
 console.log('%cWarning: Do not paste any codes here unless you understand them. Hackers may attack you by that way.', consoleStyles);
+export function createThemeToggler() {
+    const toggleIcon = document.getElementById('toggle-icon');
+    toggleIcon.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme');
+        if (document.body.classList.contains('dark-theme')) {
+            toggleIcon.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        else {
+            toggleIcon.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+    });
+}

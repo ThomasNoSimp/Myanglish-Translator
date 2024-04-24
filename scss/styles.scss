@@ -1,5 +1,21 @@
 @import "variables";
 
+.theme-toggler {
+    background-color: $background-color-dark; // Updated variable for background-color
+    height:50px;
+
+    #toggle-icon {
+        .fa-moon {
+            font-size:35px;
+            cursor:pointer;
+        }
+        .fa-sun {
+            font-size:35px;
+            cursor:pointer;
+        }
+    }
+}
+
 .translator {
     display: flex;
     flex-direction: column;
@@ -32,6 +48,7 @@
         transition: background-color $transition-duration-short $transition-timing-function-ease; // Updated variables for transition
         margin-bottom: $space-md; // Updated variable for margin-bottom
         width:calc(100% - 3%);
+        border-radius: 5px;
 
         &:hover {
             background-color: darken($button-color, 10%); // Use Sass function to darken color
@@ -43,5 +60,100 @@
         font-size: $heading2-font-size; // Updated variable for font-size
         font-family: $font-family-system-ui; // Updated variable for font-family
         margin-bottom: $space-md; // Updated variable for margin-bottom
+    }
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Ensure the footer spans the entire width of the viewport */
+    padding: $space-md; // Updated variable for padding
+    border: $border-color-dark; // Updated variable for border color
+    border-radius: $border-radius-small; // Updated variable for border-radius
+    background-color: $background-color-dark; // Updated variable for background-color
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    text-align: center; /* Center the text within the footer */
+    z-index: 1000; /* Ensure the footer appears above other content */
+
+    h5 {
+        font-family: $font-family-system-ui; // Updated variable for font-family
+    }
+
+    span a {
+        color: $text-color-dark; // Updated variable for color
+        text-decoration: none;
+        transition: font-size 0.2s ease; // Transition for font-size change
+    
+        &:hover {
+            text-decoration: underline;
+            font-size: calc(#{$base-font-size} + 0.5px); // Increase font size by 0.5px
+        }
+    }    
+}
+
+// Dark theme
+
+.dark-theme {
+    $background-color-dark-theme: #292929; // Dark background color
+    $text-color-dark-theme: #ffffff; // Text color for dark theme
+    $accent-color-dark-theme: #27ae60; // Greenish accent color for buttons and borders
+
+    background-color: $background-color-dark-theme;
+
+    .theme-toggler {
+        background-color: $background-color-dark-theme;
+
+        #toggle-icon {
+            .fa-moon,
+            .fa-sun {
+                color: $accent-color-dark-theme; // Moon and sun icon color in dark theme
+            }
+        }
+    }
+
+    .translator {
+        textarea {
+            background-color: $background-color-dark-theme; // Background color for textarea in dark theme
+            color: $text-color-dark-theme; // Text color for textarea in dark theme
+            border-color: $accent-color-dark-theme; // Border color for textarea in dark theme
+
+            &:focus {
+                border-color: darken($accent-color-dark-theme, 20%); // Darken border color on focus
+            }
+        }
+
+        button {
+            background-color: $accent-color-dark-theme; // Background color for button in dark theme
+            color: $text-color-dark-theme; // Text color for button in dark theme
+            border-color: $accent-color-dark-theme; // Border color for button in dark theme
+
+            &:hover {
+                background-color: lighten($accent-color-dark-theme, 10%); // Lighten button color on hover
+                border-color: lighten($accent-color-dark-theme, 10%); // Lighten border color on hover
+            }
+        }
+
+        label {
+            color: $text-color-dark-theme; // Text color for label in dark theme
+        }
+    }
+
+    #footer {
+        border-color: $accent-color-dark-theme; // Border color for footer in dark theme
+        background-color: $background-color-dark-theme; // Background color for footer in dark theme
+
+        h5 {
+            color: $text-color-dark-theme; // Text color for footer heading in dark theme
+        }
+
+        span a {
+            color: $accent-color-dark-theme; // Link color in dark theme
+
+            &:hover {
+                color: lighten($accent-color-dark-theme, 10%); // Lighten link color on hover
+            }
+        }
     }
 }

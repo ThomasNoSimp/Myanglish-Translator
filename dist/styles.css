@@ -15,6 +15,19 @@
   }
 }
 /* Variables End */
+.theme-toggler {
+  background-color: #e9ecef;
+  height: 50px;
+}
+.theme-toggler #toggle-icon .fa-moon {
+  font-size: 35px;
+  cursor: pointer;
+}
+.theme-toggler #toggle-icon .fa-sun {
+  font-size: 35px;
+  cursor: pointer;
+}
+
 .translator {
   display: flex;
   flex-direction: column;
@@ -45,6 +58,7 @@
   transition: background-color 0.3s ease;
   margin-bottom: 24px;
   width: 97%;
+  border-radius: 5px;
 }
 .translator button:hover {
   background-color: #3d8b40;
@@ -54,6 +68,77 @@
   font-size: 2rem;
   font-family: "system-ui", sans-serif;
   margin-bottom: 24px;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Ensure the footer spans the entire width of the viewport */
+  padding: 24px;
+  border: #bdbdbd;
+  border-radius: 4px;
+  background-color: #e9ecef;
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  text-align: center; /* Center the text within the footer */
+  z-index: 1000; /* Ensure the footer appears above other content */
+}
+#footer h5 {
+  font-family: "system-ui", sans-serif;
+}
+#footer span a {
+  color: #222;
+  text-decoration: none;
+  transition: font-size 0.2s ease;
+}
+#footer span a:hover {
+  text-decoration: underline;
+  font-size: calc(16px + 0.5px);
+}
+
+.dark-theme {
+  background-color: #292929;
+}
+.dark-theme .theme-toggler {
+  background-color: #292929;
+}
+.dark-theme .theme-toggler #toggle-icon .fa-moon,
+.dark-theme .theme-toggler #toggle-icon .fa-sun {
+  color: #27ae60;
+}
+.dark-theme .translator textarea {
+  background-color: #292929;
+  color: #ffffff;
+  border-color: #27ae60;
+}
+.dark-theme .translator textarea:focus {
+  border-color: #145b32;
+}
+.dark-theme .translator button {
+  background-color: #27ae60;
+  color: #ffffff;
+  border-color: #27ae60;
+}
+.dark-theme .translator button:hover {
+  background-color: #36d278;
+  border-color: #36d278;
+}
+.dark-theme .translator label {
+  color: #ffffff;
+}
+.dark-theme #footer {
+  border-color: #27ae60;
+  background-color: #292929;
+}
+.dark-theme #footer h5 {
+  color: #ffffff;
+}
+.dark-theme #footer span a {
+  color: #27ae60;
+}
+.dark-theme #footer span a:hover {
+  color: #36d278;
 }
 
 /*# sourceMappingURL=styles.css.map */
