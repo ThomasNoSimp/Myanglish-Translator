@@ -15,17 +15,34 @@ fetch('./src/translations.json')
 });
 // Translate function
 function translate(input) {
-    // Convert input text to lowercase for case-insensitive matching
-    const lowerInput = input.toLowerCase();
-    // Check if input exists in translations
-    if (lowerInput in translations) {
-        // Return translation if found
-        return translations[lowerInput];
-    }
-    else {
-        // Return original input if translation not found
-        return input;
-    }
+    // Split input text into words
+    const words = input.trim().split(/\s+/);
+    // Translate each word separately
+    const translatedWords = words.map(word => {
+        // Convert word to lowercase for case-insensitive matching
+        const lowerWord = word.toLowerCase();
+        // Check if word exists in translations
+        if (lowerWord in translations) {
+            // Get the output for the word
+            const output = translations[lowerWord];
+            // Check if the output is an array
+            if (Array.isArray(output)) {
+                // Choose a random output from the array
+                const randomIndex = Math.floor(Math.random() * output.length);
+                return output[randomIndex];
+            }
+            else {
+                // Return translation if found
+                return output;
+            }
+        }
+        else {
+            // Return original word if translation not found
+            return word;
+        }
+    });
+    // Join translated words back into a string
+    return translatedWords.join('');
 }
 // Event listener for translate button click
 document.addEventListener('DOMContentLoaded', () => {
@@ -56,11 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('One or more elements not found.');
     }
 });
-// Apply CSS styles to console output
 const consoleStyles = `
     font-size: 20px;
     font-weight: bold;
-    color: #FF5733; /* You can use any color you prefer */
+    color: #FF5733;
 `;
-// Display information about the page
 console.log('%cWarning: Do not paste any codes here unless you understand them. Hackers may attack you by that way.', consoleStyles);

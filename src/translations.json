@@ -1,7 +1,14 @@
 {
     "translations": [
-      { "input": "kyite", "output": "like" },
-      { "input": "kmkl", "output": "ko may ko loe" }
+      { "input": "a", "output": "ေအ" },
+      { "input": "b", "output": "ဘီ" },
+      { "input": "c", "output": ["ဆီ", "စီ" ] },
+      { "input": "d", "output": "ဒီ" },
+      { "input": "e", "output": "အီး" },
+      { "input": "f", "output": "f" },
+      { "input": "g", "output": "ကြီး" },
+      { "input": "h", "output": "h" },
+      { "input": "i", "output": "အီုင်" },
+      { "input": "j", "output": "j" }
     ]
 }
-  
