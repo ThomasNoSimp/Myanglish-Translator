@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "@types/sweetalert": "^2.0.4",
+    "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
     "sweetalert": "^2.1.2"
   }
 }

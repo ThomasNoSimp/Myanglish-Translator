@@ -76,7 +76,7 @@
   left: 0;
   width: 100%; /* Ensure the footer spans the entire width of the viewport */
   padding: 24px;
-  border: #bdbdbd;
+  border: 1px solid #bdbdbd;
   border-radius: 4px;
   background-color: #e9ecef;
   display: flex;
