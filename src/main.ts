@@ -98,7 +98,8 @@ export function createThemeToggler() {
         document.body.classList.toggle('dark-theme');
         if (document.body.classList.contains('dark-theme')) {
             toggleIcon.innerHTML = '<i class="fas fa-sun"></i>';
-        } else {
+        } 
+        else {
             toggleIcon.innerHTML = '<i class="fas fa-moon"></i>';
         }
     });
